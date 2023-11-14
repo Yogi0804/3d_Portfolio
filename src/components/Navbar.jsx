@@ -27,7 +27,6 @@ const Navbar = () => {
           Projects
         </NavLink>
       </nav>
-      <div className="text-2xl">hi</div>
     </header>
   );
 };
