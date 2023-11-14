@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unknown-property */
 import { Canvas } from "@react-three/fiber";
-import { useEffect } from "react";
 import { Suspense, useState } from "react";
+import HomeInfo from "../components/homeInfo";
 import Loader from "../components/Loader";
 import Bird from "../models/bird";
 import Island from "../models/island";
@@ -9,12 +9,6 @@ import Plane from "../models/plane";
 import Sky from "../models/sky";
 
 const Home = () => {
-  {
-    /* <div className="flex justify-center items-center absolute top-28 left-0 right-0 z-10">
-      POPUP
-    </div> */
-  }
-
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
 
@@ -56,6 +50,10 @@ const Home = () => {
         isRotating ? "cursor-grabbing" : "cursor-grab"
       }`}
     >
+      <div className="flex justify-center items-center absolute top-28 left-0 right-0 z-10">
+        {currentStage && <HomeInfo currentStage={currentStage} />}
+      </div>
+
       <Canvas
         className="w-full h-screen bg-transparent"
         camera={{ near: 0.1, far: 1000 }}
@@ -69,7 +67,7 @@ const Home = () => {
             intensity={1}
           />
           <Bird />
-          <Sky />
+          <Sky isRotating={isRotating} />
 
           <Island
             position={islandPosition}

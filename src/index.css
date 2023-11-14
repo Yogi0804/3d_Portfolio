@@ -373,6 +373,14 @@ textarea {
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
+  /* 1 */
+  opacity: 1;
+  /* 2 */
+  color: #9ca3af;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
   opacity: 1;
   /* 1 */
   color: #9ca3af;
@@ -735,6 +743,13 @@ video {
 
 body {
   font-family: "Work Sans", sans-serif;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+body:active {
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
 }
 
 body:has(.card[data-color="blue"]:hover) {

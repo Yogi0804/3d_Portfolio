@@ -47,34 +47,35 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
       if (isRotating) {
         const clientX = e.touches ? e.touches[0].clientX : e.clientX;
         const delta = (clientX - lastX.current) / viewport.width;
-        islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+        const rotationFactor = 0.01; // Adjust this factor to control rotation speed
+        islandRef.current.rotation.y += delta * rotationFactor * Math.PI;
         lastX.current = clientX;
-        rotationSpeed.current = delta * 0.01 * Math.PI;
-
-        console.log("yogi = ", {
-          touches: e.originalEvent,
-          clientX: e.clientX,
-          islandY: islandRef.current.rotation.y,
-          rotationSpeed: rotationSpeed.current,
-        });
+        rotationSpeed.current = delta * rotationFactor * Math.PI;
       }
     },
+
     [isRotating, viewport.width]
   );
 
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === "ArrowLeft") {
-      if (!isRotating) setIsRotating(true);
-      islandRef.current.rotation.y += 0.01 * Math.PI;
-    } else if (e.key === "ArrowRight") {
-      islandRef.current.rotation.y -= 0.01 * Math.PI;
-    }
-  }, []);
-  const handleKeyUp = useCallback((e) => {
-    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-      setIsRotating(false);
-    }
-  }, []);
+  const handleKeyDown = useCallback(
+    (e) => {
+      if (e.key === "ArrowLeft") {
+        if (!isRotating) setIsRotating(true);
+        islandRef.current.rotation.y += 0.01 * Math.PI;
+      } else if (e.key === "ArrowRight") {
+        islandRef.current.rotation.y -= 0.01 * Math.PI;
+      }
+    },
+    [isRotating, setIsRotating]
+  );
+  const handleKeyUp = useCallback(
+    (e) => {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        setIsRotating(false);
+      }
+    },
+    [setIsRotating]
+  );
 
   // This function is called on each frame update
   useFrame(() => {
@@ -135,15 +136,13 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
   useEffect(() => {
     const canvas = gl.domElement;
     canvas.addEventListener("pointermove", handlePointerMove);
-    canvas.addEventListener("pointerup", handlePointerDown);
-    canvas.addEventListener("pointerdown", handlePointerUp);
+    canvas.addEventListener("pointerdown", handlePointerDown);
     document.addEventListener("keyup", handleKeyUp);
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
       canvas.removeEventListener("pointermove", handlePointerMove);
-      canvas.removeEventListener("pointerup", handlePointerDown);
-      canvas.removeEventListener("pointerdown", handlePointerUp);
+      canvas.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keyup", handleKeyUp);
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -155,6 +154,15 @@ const Island = ({ isRotating, setIsRotating, setCurrentStage, ...props }) => {
     handleKeyUp,
     handleKeyDown,
   ]);
+
+  useEffect(() => {
+    const canvas = gl.domElement;
+    canvas.addEventListener("pointerup", handlePointerUp);
+
+    return () => {
+      canvas.removeEventListener("pointerup", handlePointerUp);
+    };
+  }, [gl, handlePointerUp]);
 
   return (
     <a.group ref={islandRef} {...props} dispose={null}>
