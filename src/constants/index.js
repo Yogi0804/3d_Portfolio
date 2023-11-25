@@ -24,6 +24,7 @@ import {
   tailwindcss,
   threads,
   typescript,
+  encryption,
 } from "../assets/icons";
 
 export const skills = [
@@ -161,12 +162,12 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    link: "https://github.com/Yogi0804",
   },
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/in/yogendra007",
   },
 ];
 
@@ -182,18 +183,18 @@ export const projects = [
   {
     iconUrl: threads,
     theme: "btn-back-green",
-    name: "Full Stack Threads Clone",
+    name: "Invisibility Cloak",
     description:
       'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: "https://github.com/adrianhajdin/threads",
+    link: "https://github.com/Yogi0804/invisibility-cloak",
   },
   {
-    iconUrl: car,
-    theme: "btn-back-blue",
-    name: "Car Finding App",
+    iconUrl: encryption,
+    theme: "btn-back-black",
+    name: "Shamir Secret Sharing",
     description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
+      "Successfully integrated the Shamir's Secret Sharing algorithm into images. This implementation allows for the secure distribution of sensitive information within image data.",
+    link: "https://github.com/Yogi0804/Shamir-Secret-Sharing",
   },
   {
     iconUrl: snapgram,
