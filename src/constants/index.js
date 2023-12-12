@@ -1,9 +1,9 @@
 import { the_spark_foundation, nbyula, zscaler } from "../assets/images";
 import {
-  car,
+  // car,
   contact,
   css,
-  estate,
+  // estate,
   express,
   git,
   github,
@@ -15,12 +15,12 @@ import {
   mui,
   nextjs,
   nodejs,
-  pricewise,
+  // pricewise,
   react,
   redux,
   sass,
-  snapgram,
-  summiz,
+  // snapgram,
+  // summiz,
   tailwindcss,
   threads,
   typescript,
@@ -172,14 +172,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
-  {
-    iconUrl: pricewise,
-    theme: "btn-back-red",
-    name: "Amazon Price Tracker",
-    description:
-      "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
-    link: "https://github.com/adrianhajdin/pricewise",
-  },
+  // {
+  //   iconUrl: pricewise,
+  //   theme: "btn-back-red",
+  //   name: "Amazon Price Tracker",
+  //   description:
+  //     "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
+  //   link: "https://github.com/adrianhajdin/pricewise",
+  // },
   {
     iconUrl: threads,
     theme: "btn-back-green",
@@ -196,28 +196,28 @@ export const projects = [
       "Successfully integrated the Shamir's Secret Sharing algorithm into images. This implementation allows for the secure distribution of sensitive information within image data.",
     link: "https://github.com/Yogi0804/Shamir-Secret-Sharing",
   },
-  {
-    iconUrl: snapgram,
-    theme: "btn-back-pink",
-    name: "Full Stack Instagram Clone",
-    description:
-      "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-    link: "https://github.com/adrianhajdin/social_media_app",
-  },
-  {
-    iconUrl: estate,
-    theme: "btn-back-black",
-    name: "Real-Estate Application",
-    description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
-  },
-  {
-    iconUrl: summiz,
-    theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
-    description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
-  },
+  // {
+  //   iconUrl: snapgram,
+  //   theme: "btn-back-pink",
+  //   name: "Full Stack Instagram Clone",
+  //   description:
+  //     "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
+  //   link: "https://github.com/adrianhajdin/social_media_app",
+  // },
+  // {
+  //   iconUrl: estate,
+  //   theme: "btn-back-black",
+  //   name: "Real-Estate Application",
+  //   description:
+  //     "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
+  //   link: "https://github.com/adrianhajdin/projects_realestate",
+  // },
+  // {
+  //   iconUrl: summiz,
+  //   theme: "btn-back-yellow",
+  //   name: "AI Summarizer Application",
+  //   description:
+  //     "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
+  //   link: "https://github.com/adrianhajdin/project_ai_summarizer",
+  // },
 ];
